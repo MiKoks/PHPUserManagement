@@ -1,5 +1,11 @@
 ## User Management
 
+### Requirements
+
+* Docker Compose version v2.15.1
+
+* PHP 8.0.9
+
 ### Steps to run
 * Start up database with Docker
 ```
