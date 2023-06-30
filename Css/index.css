@@ -1,0 +1,172 @@
+body {
+    height: auto;
+    background-color: #CDE5EA;
+    background-image: linear-gradient(43deg, ghostwhite 20%, #CDE5EA 45%, ghostwhite 70%);
+    background-blend-mode: color;
+    overflow: auto;
+    min-height: 98vh;
+    margin: 0;
+    padding: 0;
+}
+
+.SubmitButton {
+    background-color: deepskyblue;
+    background-image: linear-gradient(43deg, #4158D0 10%, #2E9FB6 80%);
+    border: none;
+    padding: 5px 15px;
+    font-size: 1rem;
+    width: 6rem;
+    height: auto;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 0.4rem cornflowerblue;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 1rem;
+    text-align: center;
+    font-family: Verdana, serif;
+}
+
+.SubmitButton:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+
+.SubmitButton:hover {
+    background: deepskyblue;
+    color: white;
+    text-shadow: 0 0.1rem blue;
+}
+
+.ListItems {
+    background-color: lightblue;
+    border: none;
+    padding: 5px 15px;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    color: deepskyblue;
+    box-shadow: 0 0.2rem #dfd9d9;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 3px;
+    font-family: Verdana, serif;
+    display: flex;
+}
+
+.ListItems:hover {
+    background: deepskyblue;
+    box-shadow: 0 0.2rem cornflowerblue;
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+}
+
+.Links {
+    background: azure;
+    text-decoration: none;
+    color: darkblue;
+    font-family: Verdana, serif;
+    margin: 3px;
+}
+
+.Title,
+h2 {
+    background-color: cornflowerblue;
+    background-image: linear-gradient(43deg, #4158D0 10%, #2E9FB6 80%);
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0.2rem #4158D0;
+    font-family: Verdana, serif;
+    margin: 1rem;
+    text-align: center;
+}
+
+.ListItSelf {
+    background-color: cornflowerblue;
+    background-image: linear-gradient(43deg, #4158D0 10%, #2E9FB6 80%);
+    border: none;
+    padding: 5px 15px;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    color: deepskyblue;
+    box-shadow: 0 0 0.4rem #4158D0;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+.ListContainer {
+    margin-bottom: 1rem;
+}
+
+.ListContainer:first-child {
+    margin-top: 1rem;
+}
+
+.wrapper {
+    width: 60%;
+    min-width: 600px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 10%, #C850C0 30%, #FFCC70 105%);
+    border-radius: 5px;
+    box-shadow: 0 0 0.5rem black;
+}
+
+select {
+    background-color: azure;
+    border-radius: 5px;
+    padding: 0 1em 0 0;
+    margin-left: 10%;
+    width: 80%;
+    font-family: Verdana, serif;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    box-shadow: 0 0 0.4rem black;
+}
+
+select option:checked {
+    background-color: deepskyblue;
+}
+
+select::-webkit-scrollbar {
+    width: 12px;
+}
+
+select::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+select::-webkit-scrollbar-thumb {
+    background-color: deepskyblue;
+    background-image: linear-gradient(43deg, #4158D0 10%, #2E9FB6 80%);
+    border-radius: 6px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+    background-color: cornflowerblue;
+}
+
+label {
+    font-family: Verdana, serif;
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+input {
+    font-family: Verdana, serif;
+    margin-left: 10%;
+    background-color: azure;
+    border-radius: 5px;
+    padding: 0 1em 0 0;
+    box-shadow: 0 0 0.4rem black;
+}
