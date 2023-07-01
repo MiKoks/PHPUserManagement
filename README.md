@@ -11,7 +11,6 @@
 ```
 docker-compose up
 ```
-* Execute Database/schema.sql
 
 * Start up the project from terminal, insert this line:
 ```

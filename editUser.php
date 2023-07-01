@@ -20,8 +20,8 @@ if ($user === null) {
 
 // Populate the form fields with the user's data
 $name = isset($_POST["name"]) ? trim($_POST["name"]) : $user['name'];
-$userSelectedSectors = $_POST["sectors"] ?? explode(", ", $user['sectors']);
-$sector = explode(", ", $user['sectors']);
+$userSelectedSectors = $_POST["sectors"] ?? explode(", ", $user['sector']);
+$sector = explode(", ", $user['sector']);
 $agreed_terms = $_POST["agreed_terms"] ?? (isset($user['agreed_terms']) && $user['agreed_terms']);
 
 // Fetch sectors from the database
@@ -32,7 +32,7 @@ $sectorOptions = generateSectorOptionsEditUser($sectorsData, $sector);
 
 $pageTitle = "Edit Information";
 $formTitle = "Edit Your Information";
-$formAction = "Helpers/processForm.php?id=" . $userId;
+$formAction = "Helpers/formHandler.php?id=" . $userId;
 $submitButtonLabel = "Update";
 $showIndexLink = true;
 $formType = 'edit';
@@ -43,7 +43,7 @@ $templateVariables = compact('pageTitle', 'formTitle', 'formAction', 'name', 'se
 // Include the template file and extract the variables
 extract($templateVariables);
 
-include 'sharedHTML.php';
+include 'shared.php';
 
 renderForm($pageTitle, $formTitle, $formAction, $name, $sectorOptions, $agreed_terms, $submitButtonLabel, $showIndexLink,$formType, $userId);
 ?>

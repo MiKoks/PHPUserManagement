@@ -1,9 +1,12 @@
 <?php
 require_once 'Database/database.php';
+require_once 'Database/createTables.php';
 require_once 'Helpers/generateSectorOptions.php';
 require_once 'Database/databaseQueries.php';
 require_once 'Helpers/saveSectorsToDb.php';
 
+
+createTables();
 
 // Call the function from database.php to get the PDO instance
 $pdo = getPDO();
@@ -26,7 +29,7 @@ $agreed_terms = '';
 
 $pageTitle = "Please enter your name and pick the Sectors you are currently involved in.";
 $formTitle = "Please enter your name and pick the Sectors you are currently involved in.";
-$formAction = "Helpers/processForm.php";
+$formAction = "Helpers/formHandler.php?id={id}";
 $submitButtonLabel = "Save";
 $showIndexLink = false;
 $formType = "add";
@@ -36,7 +39,7 @@ $templateVariables = compact('pageTitle', 'formTitle', 'formAction', 'name', 'se
 
 // Include the template file and extract the variables
 
-include 'sharedHTML.php';
+include 'shared.php';
 
 renderForm($pageTitle, $formTitle, $formAction, $name, $sectorOptions, $agreed_terms, $submitButtonLabel, $showIndexLink, $formType);
 ?>

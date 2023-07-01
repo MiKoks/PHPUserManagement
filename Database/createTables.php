@@ -1,26 +1,28 @@
 <?php
-require_once '../Database/database.php';
-require_once '../Database/databaseQueries.php';
+require_once 'database.php';
+require_once 'databaseQueries.php';
 
-// Read the schema.sql file
-$schema = file_get_contents('..\Database\schema.sql');
 
-try {
-    // Call the function from database.php to get the PDO instance
-    $pdo = getPDO();
-    $tableExists = false;
+function createTables(): void
+{
+    // Read the schema.sql file
+    $schema = file_get_contents('C:\Users\mihke\Desktop\code\internships\Helmes\Database\schema.sql');
+    try {
+        // Call the function from database.php to get the PDO instance
+        $pdo = getPDO();
+        $tableExists = false;
 
-    // Check if the table exists
-    $result = checkIfTableExistsQuery($pdo);
+        // Check if the table exists
+        $result = checkIfTableExistsQuery($pdo);
 
-    if ($result && $result['exists']) {
-        $tableExists = true;
+        if ($result && $result['exists']) {
+            $tableExists = true;
+        }
+
+        if (!$tableExists) {
+            $pdo->exec($schema);
+        }
+    } catch (PDOException $e) {
+        die("Table creation failed: " . $e->getMessage());
     }
-
-    if (!$tableExists) {
-        $pdo->exec($schema);
-        echo "Table created successfully!";
-    }
-} catch (PDOException $e) {
-    die("Table creation failed: " . $e->getMessage());
 }

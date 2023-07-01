@@ -4,10 +4,9 @@
     <file url="file://$PROJECT_DIR$/Database/createTables.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/Database/databaseQueries.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/Database/schema.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/Helpers/processForm.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Helpers/formHandler.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/Helpers/saveSectorsToDb.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/editUser.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/index.php" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/userList.php" dialect="GenericSQL" />
   </component>
 </project>

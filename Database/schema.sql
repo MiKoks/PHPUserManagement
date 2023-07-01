@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS sectors;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
-    sectors TEXT NOT NULL,
+    sector TEXT NOT NULL,
     agreed_terms BOOLEAN NOT NULL DEFAULT FALSE
 );
 

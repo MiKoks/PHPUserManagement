@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function addUser($pdo, $name, $sector, $agreed_terms): void
     {
        addUserDataQuery($pdo, $name, $sector, $agreed_terms);
-
     }
 
     function updateUserData($pdo, $name, $sector, $agreed_terms): void
@@ -54,13 +53,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 removeUser($pdo);
             } elseif (isset($_POST["Save"])) {
                 addUser($pdo, $name, $sectors, $agreed_terms);
+                // Get the newly assigned user ID
+                $userId = $pdo->lastInsertId();
             } elseif (isset($_POST["Update"])) {
                 updateUserData($pdo, $name, $sectors, $agreed_terms);
+                $userId = getUserIdByName($pdo, $name);
             } else {
                 echo "Something went Wrong!";
             }
-            // Redirect to the user list page
-            header("Location: /userList.php");
+            // Redirect the user to their profile page
+            header("Location: ../profile.php?id=" . $userId);
         } else {
             // Display validation errors and refill the form with submitted data
             echo "<ul>";
