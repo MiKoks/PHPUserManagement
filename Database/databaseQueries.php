@@ -29,15 +29,6 @@ function getUserDataQuery($pdo, $userId)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function getUserId($pdo){
-    $stmt = $pdo->prepare("SELECT id, name, sector FROM users WHERE id = :id");
-    $stmt->execute();
-    return $pdo->lastInsertId();
-}
-
-
-
-
 function checkIfTableExistsQuery($pdo) {
 
     // Check if the table exists
@@ -64,12 +55,6 @@ function addSectorsQuery($pdo)
     return $pdo->prepare("INSERT INTO sectors (name, parent_id) VALUES (?, ?)");
 }
 
-function removeUserQuery(PDO $pdo, int $userId): bool {
-    $query = "DELETE FROM users WHERE id = :id";
-    $statement = $pdo->prepare($query);
-    $statement->bindValue(':id', $userId, PDO::PARAM_INT);
-    return $statement->execute();
-}
 function getUserIdByName($pdo, $name)
 {
     $query = "SELECT id FROM users WHERE name = :name";

@@ -24,13 +24,12 @@ $formTitle = "User profile";
 $name = $user['name'];
 $sector = $user['sector'];
 $sectorName = getSectorNameById($pdo, $sector);
-$formAction = "Helpers/formHandler.php?id=" . $userId;
 $showIndexLink = true;
 $formType = 'edit';
-$templateVariables = compact('pageTitle', 'formTitle', 'formAction', 'name', 'showIndexLink');
+$templateVariables = compact('pageTitle', 'formTitle', 'name', 'showIndexLink');
 
 // Include the shared HTML template
 include 'shared.php';
 
 // Render the profile information
-renderProfile($name, $sectorName, $userId, $formAction);
+renderProfile($name, $sectorName, $userId);

@@ -6,7 +6,7 @@ require_once 'databaseQueries.php';
 function createTables(): void
 {
     // Read the schema.sql file
-    $schema = file_get_contents('C:\Users\mihke\Desktop\code\internships\Helmes\Database\schema.sql');
+    $schema = file_get_contents('Database\schema.sql');
     try {
         // Call the function from database.php to get the PDO instance
         $pdo = getPDO();

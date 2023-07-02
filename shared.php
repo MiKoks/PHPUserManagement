@@ -1,5 +1,5 @@
 <?php
-function renderForm($pageTitle, $formTitle, $formAction, $name, $sectorOption, $agreed_terms, $submitButtonLabel, $showIndexLink, $formType = 'remove', $userId = null): void
+function renderForm($pageTitle, $formTitle, $formAction, $name, $sectorOption, $agreed_terms, $submitButtonLabel, $showIndexLink, $formType = '', $userId = null): void
 {
     ?>
     <!DOCTYPE html>
@@ -40,8 +40,7 @@ function renderForm($pageTitle, $formTitle, $formAction, $name, $sectorOption, $
                    class="SubmitButton">
             <?php if ($showIndexLink) : ?>
                 <a href="profile.php?id=<?php echo $userId; ?>" class="SubmitButton">Back to profile</a>
-                <a href="index.php" class="SubmitButton">Index</a>
-                <input type="submit" value="delete" name="delete" class="SubmitButton">
+                <a href="index.php" class="SubmitButton">Home page</a>
             <?php endif; ?>
             </div>
         </form>

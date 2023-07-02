@@ -14,13 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $agreed_terms = isset($_POST["agreed_terms"]);
     $formType = $_POST["form_type"];
 
-    function removeUser($pdo): void
-    {
-        $userId = $_POST["user_id"];
-        removeUserQuery($pdo, $userId);
-
-    }
-
     function addUser($pdo, $name, $sector, $agreed_terms): void
     {
        addUserDataQuery($pdo, $name, $sector, $agreed_terms);
@@ -49,9 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
         $errors = preformDataValidation($name, $sectors,$agreed_terms);
         if (empty($errors)) {
-            if (isset($_POST["delete"])) {
-                removeUser($pdo);
-            } elseif (isset($_POST["Save"])) {
+            if (isset($_POST["Save"])) {
                 addUser($pdo, $name, $sectors, $agreed_terms);
                 // Get the newly assigned user ID
                 $userId = $pdo->lastInsertId();

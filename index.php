@@ -5,7 +5,6 @@ require_once 'Helpers/generateSectorOptions.php';
 require_once 'Database/databaseQueries.php';
 require_once 'Helpers/saveSectorsToDb.php';
 
-
 createTables();
 
 // Call the function from database.php to get the PDO instance
