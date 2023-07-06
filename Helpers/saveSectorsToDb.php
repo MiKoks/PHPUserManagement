@@ -1,6 +1,6 @@
 <?php
-require_once "Database/database.php";
-require_once "Database/databaseQueries.php";
+require_once __DIR__ . '/../Database/database.php';
+require_once __DIR__ . '/../Database/databaseQueries.php';
 
 // Call the function from database.php to get the PDO instance
 $pdo = getPDO();
@@ -147,7 +147,7 @@ function saveSectors($pdo, $category, $parentId = null): void
         $insertStmt->execute([$category['name'], $parentId]);
         $sectorId = $pdo->lastInsertId();
     } catch (PDOException $e) {
-        // Sector already exists, skip insertion
+        echo $e;
         $sectorId = null;
     }
 

@@ -6,7 +6,7 @@ function generateSectorOptionsEditUser($sectors, $selectedSectors, $parentId = 0
     foreach ($sectors as $sector) {
         if ($sector['parent_id'] == $parentId) {
             $selected = in_array($sector['id'], $selectedSectors) ? 'selected' : '';
-            $options .= '<option value="' . $sector['id'] . '" ' . $selected . '>' . $indent . $sector['name'] . '</option>';
+            $options .= '<option value="' . $sector['id'] . '"' . $selected . '>' . $indent . $sector['name'] . '</option>';
             $options .= generateSectorOptionsEditUser($sectors, $selectedSectors, $sector['id'], $indent . "&nbsp;&nbsp;&nbsp;&nbsp;");
         }
     }

@@ -1,12 +1,10 @@
 <?php
-require_once 'Database/database.php';
-require_once 'Database/databaseQueries.php';
-require_once 'Helpers/generateSectorOptions.php';
+require_once __DIR__ . '/Database/database.php';
+require_once __DIR__ . '/Database/databaseQueries.php';
+require_once __DIR__ . '/Helpers/generateSectorOptions.php';
 
-// Call the function from database.php to get the PDO instance
 $pdo = getPDO();
 
-// Get the user ID from the URL parameter
 $userId = $_GET['id'];
 
 // Get the user's data from the database

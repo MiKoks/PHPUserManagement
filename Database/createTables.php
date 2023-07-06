@@ -1,7 +1,6 @@
 <?php
-require_once 'database.php';
-require_once 'databaseQueries.php';
-
+require_once __DIR__ . '/database.php';
+require_once __DIR__ . '/databaseQueries.php';
 
 function createTables(): void
 {

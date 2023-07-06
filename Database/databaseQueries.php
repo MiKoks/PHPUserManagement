@@ -1,12 +1,5 @@
 <?php
 
-function getAllSectorsQuery($pdo)
-{
-    // Fetch sectors from the database
-    $stmt = $pdo->query("SELECT id, name, parent_id FROM sectors");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
 function updateUserDataQuery($pdo, $name, $sectors, $agreed_terms, $userId): void
 {
     // Prepare and execute the database query to update the data
@@ -19,7 +12,6 @@ function updateUserDataQuery($pdo, $name, $sectors, $agreed_terms, $userId): voi
     $stmt->execute();
 }
 
-
 function getUserDataQuery($pdo, $userId)
 {
     // Fetch the user's data from the database
@@ -27,6 +19,13 @@ function getUserDataQuery($pdo, $userId)
     $stmt->bindParam(":id", $userId);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getAllSectorsQuery($pdo)
+{
+    // Fetch sectors from the database
+    $stmt = $pdo->query("SELECT id, name, parent_id FROM sectors");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function checkIfTableExistsQuery($pdo) {
@@ -53,15 +52,6 @@ function addSectorsQuery($pdo)
 {
     // Add sectors to database
     return $pdo->prepare("INSERT INTO sectors (name, parent_id) VALUES (?, ?)");
-}
-
-function getUserIdByName($pdo, $name)
-{
-    $query = "SELECT id FROM users WHERE name = :name";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute(['name' => $name]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result['id'] ?? null;
 }
 
 function getSectorNameById($pdo, $sectorId)

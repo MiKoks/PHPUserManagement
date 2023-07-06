@@ -6,6 +6,10 @@
     <file url="file://$PROJECT_DIR$/Database/schema.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Helpers/formHandler.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/Helpers/saveSectorsToDb.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Tests/Unit/createTablesTest.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Tests/Unit/dbQueriesTest.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Tests/Unit/formHandlerTest.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Tests/Unit/saveSectorsToDbTest.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/editUser.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/index.php" dialect="GenericSQL" />
   </component>

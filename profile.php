@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Database/database.php';
-require_once 'Database/databaseQueries.php';
+require_once __DIR__ . '/Database/database.php';
+require_once __DIR__ . '/Database/databaseQueries.php';
 
 // Call the function from database.php to get the PDO instance
 $pdo = getPDO();

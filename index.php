@@ -1,17 +1,15 @@
 <?php
-require_once 'Database/database.php';
-require_once 'Database/createTables.php';
-require_once 'Helpers/generateSectorOptions.php';
-require_once 'Database/databaseQueries.php';
-require_once 'Helpers/saveSectorsToDb.php';
+require_once __DIR__ . '/Database/database.php';
+require_once __DIR__ . '/Database/createTables.php';
+require_once __DIR__ . '/Helpers/generateSectorOptions.php';
+require_once __DIR__ . '/Database/databaseQueries.php';
+require_once __DIR__ . '/Helpers/saveSectorsToDb.php';
 
 createTables();
 
-// Call the function from database.php to get the PDO instance
 $pdo = getPDO();
 
-// Fetch sectors from the database
-
+// Get sectors from the database
 $sectors = getAllSectorsQuery($pdo);
 
 if (empty($sectors)) {
@@ -19,7 +17,7 @@ if (empty($sectors)) {
     $sectors = getAllSectorsQuery($pdo);
 }
 
-// Function to generate Sector options
+// Generate Sector options
 $sectorOptions = generateSectorOptionsIndex($sectors);
 
 // Populate the form fields with the user's data
@@ -37,7 +35,6 @@ $formType = "add";
 $templateVariables = compact('pageTitle', 'formTitle', 'formAction', 'name', 'sectorOptions', 'agreed_terms', 'submitButtonLabel', 'showIndexLink');
 
 // Include the template file and extract the variables
-
 include 'shared.php';
 
 renderForm($pageTitle, $formTitle, $formAction, $name, $sectorOptions, $agreed_terms, $submitButtonLabel, $showIndexLink, $formType);
